@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <h1>Jam Dunia</h1>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h5 id="parag0">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <center>
+                        <td>
+                            <h5>GMT+0 London, Inggris</h5>
+                        </td>
+                    </center>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag1">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+1 Paris, Perancis</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag2">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+2 Istanbul, Turki</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag3">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+3 Moskow, Rusia</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag4">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+4 Abu Dhabi, UEA</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag5">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+5 Islamabad, Pakistan</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag6">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+6 Astana, Kazakhstan</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag7">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+7 Jakarta, Indonesia</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag8">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+8 Beijing, China</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 id="parag9">...</h5>
+                    </td>
+                    <td>
+                        <h5>*</h5>
+                    </td>
+                    <td>
+                        <h5>GMT+9 Tokyo, Jepang</h5>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <script>
+            setInterval(
+                () => {
+                    var today = new Date()
+                    jam = today.getHours()
+                    menit = today.getMinutes()
+                    detik = today.getSeconds()
+                    noljam = ''
+                    nolmenit = ''
+                    noldetik = ''
+
+                    for (i = 0; i < 10; i++) {
+                        jam1 = today.setHours(jam-7 + i)
+                        menit1 = today.setMinutes(menit-7 + i)
+                        detik1 = today.setSeconds(detik-7 + i)
+
+
+                        if (jam-7 < 10) { noljam = '0' }
+                        else if (menit-7 < 10) { nolmenit = '0' }
+                        else if (detik-7 < 10) { noldetik = '0' }
+
+
+                        document.getElementById("parag" + i).innerHTML = noljam + today.getHours(jam1)
+                        + ' : ' +  nolmenit + today.getMinutes(menit1) + ' : '
+                        + noldetik + today.getSeconds(detik1)
+                    }
+                },
+                1000
+            )
+        </script>
+
+    </center>
+</body>
+
+</html>
